@@ -1,19 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const links = (
-    <>
-      <li>
-        <Link to='/'>Home</Link>
-      </li>
-      <li>
-        <Link to='/listedBooks'>Listed Books</Link>
-      </li>
-      <li>
-        <Link to='/pagesToBooks'>Pages to Books</Link>
-      </li>
-    </>
-  );
 
   return (
     <div className="navbar bg-base-100 mb-6">
@@ -39,19 +26,39 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            {links}
+            <li>
+              <NavLink className={({isActive}) => isActive  && 'text-[#23BE0A] border border-[#23BE0A]'} to="/">Home</NavLink>
+            </li>
+            <li className="mx-4">
+              <NavLink className={({isActive}) => isActive  && 'text-[#23BE0A] border border-[#23BE0A]'} to="/listedBooks">Listed Books</NavLink>
+            </li>
+            <li>
+              <NavLink className={({isActive}) => isActive  && 'text-[#23BE0A] border border-[#23BE0A]'} to="/pagesToBooks">Pages to Books</NavLink>
+            </li>
           </ul>
         </div>
         <a className="text-xl font-bold">Book Vibe</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          {links}
+          <li>
+            <NavLink className={({isActive}) => isActive  && 'text-[#23BE0A] border border-[#23BE0A]'} to="/">Home</NavLink>
+          </li>
+          <li className="mx-4">
+            <NavLink className={({isActive}) => isActive  && 'text-[#23BE0A] border border-[#23BE0A]'} to="/listedBooks">Listed Books</NavLink>
+          </li>
+          <li>
+            <NavLink className={({isActive}) => isActive  && 'text-[#23BE0A] border border-[#23BE0A]'} to="/pagesToBooks">Pages to Books</NavLink>
+          </li>
         </ul>
       </div>
       <div className="navbar-end gap-4">
-        <Link className="bg-[#23BE0A] text-white py-2 px-4 rounded-lg">Sign In</Link>
-        <Link className="bg-[#59C6D2] text-white py-2 px-4 rounded-lg">Sign Up</Link>
+        <Link className="bg-[#23BE0A] text-white py-2 px-4 rounded-lg">
+          Sign In
+        </Link>
+        <Link className="bg-[#59C6D2] text-white py-2 px-4 rounded-lg">
+          Sign Up
+        </Link>
       </div>
     </div>
   );
