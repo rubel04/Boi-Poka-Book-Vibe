@@ -98,7 +98,7 @@ const ListedBooks = () => {
                       Rating: {book.rating}
                     </button>
                     <Link
-                      to={`books/${book.bookId}`}
+                      to={`/books/${book.bookId}`}
                       className="text-white bg-[#328EFF] rounded-full py-1 mr-3 px-4"
                     >
                       View Details
